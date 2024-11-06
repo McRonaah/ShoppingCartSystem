@@ -34,6 +34,11 @@ public class ShoppingCart {
         return totalAmount * (1 + TAX_RATE);
     }
 
+     // Get items in the cart
+     public Map<Product, Integer> getItems() {
+        return items;
+    }
+
     // Private helper to update total amount
     private void updateTotalAmount() {
         totalAmount = items.entrySet().stream()
