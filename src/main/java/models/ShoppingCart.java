@@ -34,9 +34,14 @@ public class ShoppingCart {
         return totalAmount * (1 + TAX_RATE);
     }
 
-     // Get items in the cart
-     public Map<Product, Integer> getItems() {
+    // Get items in the cart
+    public Map<Product, Integer> getItems() {
         return items;
+    }
+
+    // Calculate total price of items (before tax) — similar to getTotalPrice
+    public double getTotalPrice() {
+        return totalAmount;
     }
 
     // Private helper to update total amount
@@ -56,15 +61,5 @@ public class ShoppingCart {
         }
         cartDetails.append("Total Amount (before tax): $").append(totalAmount);
         return cartDetails.toString();
-    }
-
-    public void addProduct(Product product) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addProduct'");
-    }
-
-    public int getTotalPrice() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getTotalPrice'");
     }
 }
