@@ -65,6 +65,7 @@ public class Main {
             System.out.println("6. Add product to cart");
             System.out.println("7. Remove product from cart");
             System.out.println("8. View cart items");
+            System.out.println("9. Check Stock");
             System.out.println("0. Checkout");
             System.out.println("-------------------------------------------------------");
             System.out.print("Enter your choice: ");
@@ -112,9 +113,17 @@ public class Main {
                     System.out.println("Total Amount (before tax): KES" + cart.getTotalAmount());
                     break;
 
-                default:
-                    System.out.println("Invalid choice.");
-                    break;
+               
+                case 9:
+                        System.out.println("Current stock availability:");
+                        for (Product product : products) {
+                            System.out.println(product.getName() + ": " + product.getStockQuantity() + " units available");
+                        }
+                        break;
+
+                    default:
+                        System.out.println("Invalid choice.");
+                        break;
             }
         }
 
