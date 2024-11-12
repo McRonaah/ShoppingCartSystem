@@ -1,6 +1,7 @@
 package services;
 
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*; // Import JUnit assertions
 
 import main.java.services.OrderService;
 import models.Customer;
@@ -20,17 +21,7 @@ public class OrderServiceTest {
         cart.addItem(product, 1);
 
         Order order = orderService.createOrder(customer, cart);
-        assertNotNull(order);
-                assertEquals(customer, order.getCustomer());
-                            }
-                        
-                            private void assertEquals(Customer customer, Customer customer2) {
-                        // TODO Auto-generated method stub
-                        throw new UnsupportedOperationException("Unimplemented method 'assertEquals'");
-                    }
-                
-                            private void assertNotNull(Order order) {
-                // TODO Auto-generated method stub
-                throw new UnsupportedOperationException("Unimplemented method 'assertNotNull'");
-            }
+        assertNotNull(order); // Checks if order is not null
+        assertEquals(customer, order.getCustomer()); // Verifies the customer is correctly assigned
+    }
 }
