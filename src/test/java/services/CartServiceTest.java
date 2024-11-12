@@ -1,10 +1,11 @@
 package services;
 
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*; // Import JUnit assertions
 
-import main.java.services.CartService;
 import models.Product;
 import models.ShoppingCart;
+import main.java.services.CartService;
 
 public class CartServiceTest {
 
@@ -17,28 +18,13 @@ public class CartServiceTest {
         
         cartService.addProductToCart(cart, product, 2);
         assertTrue(cart.getItems().containsKey(product));
-                assertEquals(2, cart.getItems().get(product).intValue());
-                            }
-                        
-                            private void assertEquals(int i, int intValue) {
-                        // TODO Auto-generated method stub
-                        throw new UnsupportedOperationException("Unimplemented method 'assertEquals'");
-                    }
-                
-                            private void assertTrue(boolean containsKey) {
-                // TODO Auto-generated method stub
-                throw new UnsupportedOperationException("Unimplemented method 'assertTrue'");
-            }
-        
-            @Test
+        assertEquals(2, cart.getItems().get(product).intValue());
+    }
+    
+    @Test
     public void testApplyDiscount() {
         double totalAmount = 100.0;
         double discountedTotal = cartService.applyDiscount(totalAmount, "SAVE10");
-        assertEquals(90.0, discountedTotal, 0.01);
-            }
-        
-                    private void assertEquals(double d, double discountedTotal, double e) {
-                        // TODO Auto-generated method stub
-                        throw new UnsupportedOperationException("Unimplemented method 'assertEquals'");
-                    }
+        assertEquals(90.0, discountedTotal, 0.01); // Allow small delta for floating-point comparison
+    }
 }
