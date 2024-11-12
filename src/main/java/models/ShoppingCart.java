@@ -62,4 +62,10 @@ public class ShoppingCart {
         cartDetails.append("Total Amount (before tax): $").append(totalAmount);
         return cartDetails.toString();
     }
+
+    // Get total amount (before tax)
+    public double getTotalAmount() {
+    return totalAmount;
+}
+
 }

@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 import models.ShoppingCart;
@@ -60,31 +59,63 @@ public class Main {
             for (Product product : products) {
                 System.out.println(product.getId() + " - " + product.getName() + " ( KES" + product.getPrice() + ")");
             }
-            
+
+            // Display options
             System.out.println("-------------------------------------------------------");
-            System.out.print("Enter product ID to add to cart (or 0 to checkout): ");
-            int productId = scanner.nextInt();
-            
-            if (productId == 0) break;
-            
-            Product selectedProduct = ValidationUtils.findProductById(productId, products);
-            if (selectedProduct == null) {
-                System.out.println("-------------------------------------------------------");
-                System.out.println("Product not found.");
-                continue;
-            }
-            
+            System.out.println("6. Add product to cart");
+            System.out.println("7. Remove product from cart");
+            System.out.println("8. View cart items");
+            System.out.println("0. Checkout");
             System.out.println("-------------------------------------------------------");
-            System.out.print("Enter quantity: ");
-            int quantity = scanner.nextInt();
-            
-            if (!selectedProduct.isInStock(quantity)) {
-                System.out.println("Insufficient stock for this product.");
-                continue;
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            if (choice == 0) break;  // Checkout
+
+            switch (choice) {
+                case 6:
+                    System.out.print("Enter product ID to add to cart: ");
+                    int productIdToAdd = scanner.nextInt();
+                    Product selectedProduct = ValidationUtils.findProductById(productIdToAdd, products);
+                    if (selectedProduct == null) {
+                        System.out.println("Product not found.");
+                        continue;
+                    }
+
+                    System.out.print("Enter quantity: ");
+                    int quantity = scanner.nextInt();
+
+                    if (!selectedProduct.isInStock(quantity)) {
+                        System.out.println("Insufficient stock for this product.");
+                        continue;
+                    }
+
+                    cartService.addProductToCart(cart, selectedProduct, quantity);
+                    System.out.println(quantity + " " + selectedProduct.getName() + "(s) added to cart.");
+                    break;
+
+                case 7:
+                    System.out.print("Enter product ID to remove from cart: ");
+                    int removeProductId = scanner.nextInt();
+                    Product productToRemove = ValidationUtils.findProductById(removeProductId, products);
+                    if (productToRemove == null) {
+                        System.out.println("Product not found.");
+                        continue;
+                    }
+                    cartService.removeProductFromCart(cart, productToRemove);
+                    System.out.println("Removed " + productToRemove.getName() + " from cart.");
+                    break;
+
+                case 8:
+                    System.out.println("Items in your cart:");
+                    System.out.println(cart.toString());
+                    System.out.println("Total Amount (before tax): KES" + cart.getTotalAmount());
+                    break;
+
+                default:
+                    System.out.println("Invalid choice.");
+                    break;
             }
-            
-            cartService.addProductToCart(cart, selectedProduct, quantity);
-            System.out.println(quantity + selectedProduct.getName() + " added to cart.");
         }
 
         // Applying discount
@@ -103,7 +134,6 @@ public class Main {
         
         // Creating the order
         Order order = orderService.createOrder(customer, cart);
-        // orderService.Order(order);
         
         // Print summary
         System.out.println("=======================================================");

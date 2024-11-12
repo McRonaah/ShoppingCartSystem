@@ -5,3 +5,8 @@
 [2024-11-11 20:06:34] ERROR: Invalid email format: 
 [2024-11-11 20:10:14] INFO: Order created successfully for customer rik@gmail.com
 [2024-11-11 23:30:39] INFO: Order created successfully for customer obarelaura@gmail.com
+[2024-11-12 13:43:56] INFO: Order created successfully for customer kevo01@gmail.com
+[2024-11-12 18:13:38] INFO: Order created successfully for customer f@mail.com
+[2024-11-12 18:26:23] INFO: Order created successfully for customer t@gmail.com
+[2024-11-12 18:40:55] INFO: Order created successfully for customer rr@gmail.com
+[2024-11-12 18:58:22] INFO: Order created successfully for customer i@gmail.com

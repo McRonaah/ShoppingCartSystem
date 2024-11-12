@@ -45,7 +45,6 @@ public class Product {
     }
 
     public void setPrice(double d) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'setPrice'");
     }
 }
