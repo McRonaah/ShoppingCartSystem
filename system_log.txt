@@ -1,0 +1,7 @@
+[2024-11-11 03:56:00] INFO: Order created successfully for customer ronald.mololu@gmail.com
+[2024-11-11 17:07:10] ERROR: Invalid email format: gmail.com
+[2024-11-11 17:07:51] ERROR: Invalid email format: 
+[2024-11-11 17:09:38] INFO: Order created successfully for customer gororandy762@gmail.com
+[2024-11-11 20:06:34] ERROR: Invalid email format: 
+[2024-11-11 20:10:14] INFO: Order created successfully for customer rik@gmail.com
+[2024-11-11 23:30:39] INFO: Order created successfully for customer obarelaura@gmail.com

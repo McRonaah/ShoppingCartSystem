@@ -20,19 +20,21 @@ public class Main {
 
         // Sample products
         Product[] products = {
-            new Product(1, "Laptop", 1000.0, "Electronics", 10),
-            new Product(2, "Phone", 800.0, "Electronics", 15),
-            new Product(3, "Tablet", 300.0, "Electronics", 5),
-            new Product(4, "Book", 20.0, "Books", 100),
-            new Product(5, "Pen", 1.0, "Stationery", 200)
+            new Product(1, "Laptop", 25000.0, "Electronics", 10),
+            new Product(2, "Phone", 12000.0, "Electronics", 15),
+            new Product(3, "Tablet", 7000.0, "Electronics", 5),
+            new Product(4, "Book", 245.0, "Books", 100),
+            new Product(5, "Pen", 95.0, "Stationery", 200)
         };
 
         Scanner scanner = new Scanner(System.in);
         
         // Customer details
+        System.out.println("=======================================================");
         System.out.print("Enter your name: ");
         String name = scanner.nextLine();
         
+        System.out.println("-------------------------------------------------------");
         System.out.print("Enter your email: ");
         String email = scanner.nextLine();
         
@@ -42,6 +44,7 @@ public class Main {
             return;
         }
         
+        System.out.println("-------------------------------------------------------");
         System.out.print("Enter your address: ");
         String address = scanner.nextLine();
         
@@ -52,11 +55,13 @@ public class Main {
 
         // Shopping process
         while (true) {
+            System.out.println("-------------------------------------------------------");
             System.out.println("Available products:");
             for (Product product : products) {
-                System.out.println(product.getId() + " - " + product.getName() + " ($" + product.getPrice() + ")");
+                System.out.println(product.getId() + " - " + product.getName() + " ( KES" + product.getPrice() + ")");
             }
             
+            System.out.println("-------------------------------------------------------");
             System.out.print("Enter product ID to add to cart (or 0 to checkout): ");
             int productId = scanner.nextInt();
             
@@ -64,10 +69,12 @@ public class Main {
             
             Product selectedProduct = ValidationUtils.findProductById(productId, products);
             if (selectedProduct == null) {
+                System.out.println("-------------------------------------------------------");
                 System.out.println("Product not found.");
                 continue;
             }
             
+            System.out.println("-------------------------------------------------------");
             System.out.print("Enter quantity: ");
             int quantity = scanner.nextInt();
             
@@ -77,10 +84,11 @@ public class Main {
             }
             
             cartService.addProductToCart(cart, selectedProduct, quantity);
-            System.out.println(quantity + " x " + selectedProduct.getName() + " added to cart.");
+            System.out.println(quantity + selectedProduct.getName() + " added to cart.");
         }
 
         // Applying discount
+        System.out.println("-------------------------------------------------------");
         System.out.print("Enter discount code (or press Enter to skip): ");
         scanner.nextLine();  // consume the remaining newline
         String discountCode = scanner.nextLine();
@@ -88,7 +96,7 @@ public class Main {
         double totalAmount = cart.calculateTotalWithTax();
         if (DiscountUtils.isValidDiscountCode(discountCode)) {
             totalAmount = cartService.applyDiscount(totalAmount, discountCode);
-            System.out.println("Discount applied! New total: $" + totalAmount);
+            System.out.println("Discount applied! New total: KES" + totalAmount);
         } else if (!discountCode.isEmpty()) {
             System.out.println("Invalid discount code.");
         }
@@ -98,12 +106,15 @@ public class Main {
         // orderService.Order(order);
         
         // Print summary
+        System.out.println("=======================================================");
         System.out.println("Order placed successfully!");
         System.out.println("Order ID: " + order.getOrderId());
         System.out.println("Customer: " + customer.getName());
-        System.out.println("Total amount: $" + totalAmount);
+        System.out.println("Total amount: KES" + totalAmount);
 
         LoggerUtils.logInfo("Order created successfully for customer " + customer.getEmail());
+
+        System.out.println("=======================================================");
 
         scanner.close();
     }

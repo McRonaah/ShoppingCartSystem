@@ -27,6 +27,7 @@ public class Order {
 
     // Generate order confirmation
     public void generateConfirmation() {
+        System.out.println("=================================");
         System.out.println("Order Confirmation:");
         System.out.println("Order ID: " + orderId);
         System.out.println("Customer: " + customer.toString());
@@ -35,5 +36,6 @@ public class Order {
             System.out.println(product.toString() + " - Quantity: " + quantity)
         );
         System.out.println("Order Status: " + status);
+        System.out.println("=================================");
     }
 }
