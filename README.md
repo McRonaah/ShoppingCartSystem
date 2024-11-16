@@ -1,7 +1,7 @@
-<h1>Online Shopping Cart System</h1><p style="text-align:center;">A Java-based application for an intuitive online shopping experience.</p>
+<h1>Online Shopping Cart System</h1>
+<p>The <strong>Online Shopping Cart System</strong> is a Java-based console application designed to mimic the functionalities of a real-world e-commerce platform. It allows users to add items to a cart, apply discounts, calculate totals, and generate order confirmations.</p>
 <h2>Table of Contents</h2>
 <ul>
-<li><a href="#about">About the Project</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#installation">Installation</a></li>
         <li><a href="#usage">Usage</a></li>
@@ -10,9 +10,6 @@
         <li><a href="#contributing">Contributing</a></li>
         <li><a href="#license">License</a></li>
     </ul>
-<h2 id="about">About the Project</h2>
-    <p>The <strong>Online Shopping Cart System</strong> is a Java-based console application designed to mimic the functionalities of a real-world e-commerce platform. It allows users to add items to a cart, apply discounts, calculate totals, and generate order confirmations.</p>
-
 <hr>
 
 <h2 id="features">Features</h2>
@@ -30,10 +27,8 @@
 <h2 id="installation">Installation</h2>
     <p>Follow these steps to set up the project:</p>
     <ol>
+    <li>Fork the Repository <a href="https://github.com/McRonaah/ShoppingCartSystem">ShoppingCartSystem</a></l1>
         <li>Clone the repository:
-            <pre>
-                <code>git clone &lt;repository-url&gt;</code>
-            </pre>
         </li>
         <li>Open the project in your preferred IDE (e.g., VS Code or IntelliJ IDEA).</li>
         <li>Run the <code>Main.java</code> file to start the application.</li>
@@ -73,7 +68,8 @@
 <hr>
 
 <h2 id="contributing">Contributing</h2>
-    <p>Contributions are welcome! Follow these steps:</p>
+<p>Contributions are welcome! If you find any issues or have suggestions for improvements, please submit a pull request or open an issue on the GitHub repository.</p>
+    <p>Or Simply! Follow these steps:</p>
 <ol>
         <li>Fork the repository</li>
         <li>Create a new branch:
@@ -99,6 +95,6 @@
 <p>This project is licensed under the <strong>Apache License</strong>. See the LICENSE file for details.</p>
 
 <hr>
-<footer style="text-align:center;">
+<!-- <footer style="text-align:center;">
         <p>Developed with ❤️ by the Online Shopping Cart System Team</p>
-    </footer>
+    </footer> -->
