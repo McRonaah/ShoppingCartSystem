@@ -17,7 +17,7 @@ public class Main {
         CartService cartService = new CartService();
         OrderService orderService = new OrderService();
 
-        // Sample products
+        //products
         Product[] products = {
             new Product(1, "Laptop", 25000.0, "Electronics", 10),
             new Product(2, "Phone", 12000.0, "Electronics", 15),
@@ -130,7 +130,7 @@ public class Main {
         // Applying discount
         System.out.println("-------------------------------------------------------");
         System.out.print("Enter discount code (or press Enter to skip): ");
-        scanner.nextLine();  // consume the remaining newline
+        scanner.nextLine();  // 
         String discountCode = scanner.nextLine();
         
         double totalAmount = cart.calculateTotalWithTax();
@@ -144,7 +144,7 @@ public class Main {
         // Creating the order
         Order order = orderService.createOrder(customer, cart);
         
-        // Print summary
+        // Output
         System.out.println("=======================================================");
         System.out.println("Order placed successfully!");
         System.out.println("Order ID: " + order.getOrderId());
