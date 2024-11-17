@@ -96,3 +96,46 @@ Here are the comprehensive test results for the Shopping Cart System, covering a
 ```bash
     Discount applied! New total: KES48838.14
 ``` 
+
+## **Feature 6: Check Stock Availability**
+### Test Case 1: Display Stock Availability
+<ul>
+<li> <b>Action:</b> Select option <code>9</code> to check stock.</li>
+<li><b>Expected Result:</b>  The system displays stock quantities for all products.</li>
+<li><b>Example Output:</b></li>
+</ul>
+
+```bash
+    Enter your choice: 9
+    Current stock availability:
+    Laptop: 10 units available
+    Phone: 15 units available
+    Tablet: 5 units available
+    Book: 100 units available
+    Pen: 200 units available
+``` 
+### Test Case 2: Verify Stock After Adding a Product
+<ul>
+<li> <b>Action:</b> Add a product to the cart, then check stock availability.</li>
+<li><b>Expected Result:</b> The stock decreases according to the quantity added.</li>
+<li><b>Example Output:</b></li>
+</ul>
+
+```bash
+    Pen: 198 units available
+``` 
+
+## **Feature 7: Generate Order Confirmation**
+### Test Case: Verify Order Confirmation
+<ul>
+<li> <b>Action:</b> Complete the checkout process.</li>
+<li><b>Expected Result:</b> An order confirmation is displayed with order details and the total amount.</li>
+<li><b>Example Output:</b></li>
+</ul>
+
+```bash
+    Order placed successfully!
+    Order ID: 30d08252-969d-40a1-95bc-1aa4dc50c212
+    Customer: Mishell Mumbua
+    Total amount: KES48084.84
+``` 
