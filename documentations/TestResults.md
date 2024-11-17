@@ -48,3 +48,51 @@ Here are the comprehensive test results for the Shopping Cart System, covering a
     Product not found in the cart.
 ``` 
 
+## **Feature 3: View Cart Items**
+### Test Case 1: View Items in Cart
+<ul>
+<li> <b>Action:</b> Select option <code>8</code> to view cart items.</li>
+<li><b>Expected Result:</b> The system displays all items in the cart with quantities and total cost (before tax).</li>
+<li><b>Example Output:</b></li>
+</ul>
+
+```bash
+    Items in your cart:
+    Laptop - 2 unit(s) - KES50000.0
+    Book - 1 unit(s) - KES245.0
+    Total Amount (before tax): KES50245.0
+``` 
+### Test Case 2: View Empty Cart
+<ul>
+<li> <b>Action:</b> View cart when no items have been added.</li>
+<li><b>Expected Result:</b> The system displays a message that the cart is empty.</li>
+<li><b>Example Output:</b></li>
+</ul>
+
+```bash
+    Your cart is empty.
+``` 
+## **Feature 4: Calculate Total with Tax**
+### Test Case: Verify Total Calculation
+<ul>
+<li> <b>Action:</b> Add items to the cart and proceed to checkout.</li>
+<li><b>Expected Result:</b> The total cost is displayed, including an 8% tax.</li>
+<li><b>Example Output:</b></li>
+</ul>
+
+```bash
+    Subtotal: KES50245.0
+    Tax (8%): KES4019.6
+    Total Amount: KES54264.6
+``` 
+## **Feature 5: Apply Discount Codes**
+### Test Case 1: Apply a Valid Discount Code
+<ul>
+<li> <b>Action:</b> AEnter a valid discount code (e.g., <code>SAVE10</code>) or <code>EMPLOYEE20</code>.</li>
+<li><b>Expected Result:</b> he discount is applied, and the new total is displayed.</li>
+<li><b>Example Output:</b></li>
+</ul>
+
+```bash
+    Discount applied! New total: KES48838.14
+``` 
